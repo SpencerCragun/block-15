@@ -17,29 +17,24 @@
 
 //this should create a collection of objects inside the froyo flavor object
 //-----------------------------------------------
+const userInput = `vanilla,vanilla,vanilla,strawberry,coffee,coffee`
 
-const flavorInput = prompt(`enter froyo flavors pls`, `vanilla,vanilla,vanilla,strawberry,coffee,coffee`)
+userInputFlavs = userInput.split(`,`);
 
-//seperate the user input into strings without commas using split.
+console.log(userInputFlavs);
 
-const flavorsString = flavorInput.split(`,`)
+let Froyo = [];
 
-//create an object to store the flavors and counts
-const froyoFlavors = {
-  vanilla:{
-    amount: 
-  },
-  strawberry:{
-    amount: 
-  },
-  coffee:{
-    amount: 
+for (let index = 0; index < userInputFlavs.length; index++){
+  let newkey = userInputFlavs[index];
+  if (userInputFlavs[index] !== userInputFlavs[index-1]) {
+    Froyo[newkey] = 1;
+  } else {
+    Froyo[newkey]+= 1;
   }
 }
 
-for (const vanilla in Object){
-  
-}
+console.log(Froyo)
 
 // loop through the array of flavors
 // if the flavor is not in the object, then add the flavor to the object and set the count to 1
